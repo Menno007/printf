@@ -20,7 +20,8 @@ int _printf(const char *format, ...)
 			result += print_format(format[i + 1], ap);
 			i++;
 			}
-			return (-1);
+			else
+				return (-1);
 		}
 		else
 			result += write(1, &format[i], 1);
