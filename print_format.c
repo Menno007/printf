@@ -40,8 +40,6 @@ int print_format(char specifier, va_list ap)
 		count += print_char(va_arg(ap, int));
 	else if (specifier == 's')
 		count += print_str(va_arg(ap, char *));
-	else if (specifier == 'r')
-		count += rev_string(va_arg(ap, char *));
 	else
 		count += write(1, &specifier, 1);
 	return (count);
