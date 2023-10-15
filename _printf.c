@@ -1,38 +1,24 @@
 #include "main.h"
 /**
- * _printf - a clone for the standerd printf
- * @format: the format string
- * Return: NumOfChars
- */
-
+ * _printf - printf
+ * @format: ss
+ * Return: ss
+*/
 int _printf(const char *format, ...)
 {
-	va_list args;
-	int NumOfChars = 0;
-	int i = 0;
+	va_list ap;
+	int result = 0, i = 0;
 
-	va_start(args, format);
-	while (*format)
+	va_start(ap, format);
+	
+	while (format[i] != '\0')
 	{
-		if (!*format)
-			return (-1);
-
-		if (format[i] == '%' && format[i + 1] == '\0')
-		{
-			return (-1);
-		}
-
-		if (*format != '%')
-			NumOfChars += write(1, format, 1);
-
-		else
-		{
-			format++;
-			if (*format == '\0' || strchr("cs%", *format) != NULL)
-				NumOfChars += print_format(*format, args);
-		}
-		format++;
+	if (format == NULL || (format[i] == '%' && format[i + 1] == '\0'))
+		return (-1);
+	if (format[i] == '%')
+		result += print_format(format[i++], ap);
+	else
+		result += write(1, &format[i++], 1);
 	}
-	va_end(args);
-	return (NumOfChars);
+	return (result);
 }
