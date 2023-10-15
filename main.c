@@ -9,11 +9,6 @@
  */
 int main(void)
 {
-	int x;
-	x = printf("%");
-	printf("%d\n" ,x);
-	x = _printf("%");
-	printf("%d\n" ,x);
-
+	printf ("s");
 	return (0);
 }

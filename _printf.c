@@ -13,6 +13,8 @@ int _printf(const char *format, ...)
 	va_start(ap, format);
 	while (format[i] != '\0')
 	{
+		if (format == NULL || (format[i] == '%' && format[i + 1] == '\0'))
+			return (-1);
 		if (format[i] == '%')
 		{
 			if (format[i + 1] != '\0')
@@ -20,7 +22,6 @@ int _printf(const char *format, ...)
 			result += print_format(format[i + 1], ap);
 			i++;
 			}
-			return (-1);
 		}
 		else
 			result += write(1, &format[i], 1);
