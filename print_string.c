@@ -13,7 +13,6 @@ int print_string(const char *str)
 		count += write(1, "(null)", 6);
 		return (count);
 	}
-	
 
 	while (*str)
 	{
