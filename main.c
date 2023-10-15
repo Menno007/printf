@@ -21,13 +21,13 @@ int main(void)
 	printf("%d\n", result);
 	result = printf("Character:[%c]\n", 'H');
 	printf("%d\n", result);
-	result = _printf("String:[%s]\n", "I am a string !");
+	result = _printf("String:[%s]\n", NULL);
 	printf("%d\n", result);
-	result = printf("String:[%s]\n", "I am a string !");
+	result = printf("String:[%s]\n", NULL);
 	printf("%d\n", result);
-	result = _printf("Percent:[%!]\n");
+	result = _printf("Percent:[%]\n");
 	printf("%d\n", result);
-	result = printf("Percent:[%!]\n");
+	result = printf("Percent:[%]\n");
 	printf("%d\n", result);
 	result = printf(NULL);
 	printf("%d\n", result);

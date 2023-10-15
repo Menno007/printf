@@ -17,8 +17,13 @@ int print_str(char *str)
 {
 	int string;
 	int i = 0;
-	string = 0;
 
+	string = 0;
+	if (str == NULL)
+	{
+		string += write(1, "(null)", 6);
+	return (string);
+	}
 	while (str[i] != '\0')
 	{
 		string += write(1, &str[i], 1);
