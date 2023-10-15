@@ -10,6 +10,7 @@ int _printf(const char *format, ...)
 	va_list args;
 	int NumOfChars = 0;
 	int i = 0;
+
 	va_start(args, format);
 	while (*format)
 	{
