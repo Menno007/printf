@@ -20,7 +20,7 @@ int print_str(char *str)
 
 	while (str[i] != '\0')
 	{
-		string = putchar(str[i]);
+		string = write(1, &str[i], 1);
 		i++;
 	}
 	return (string);
