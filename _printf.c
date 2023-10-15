@@ -30,6 +30,8 @@ int _printf(const char *format, ...)
 			format++;
 			if (*format == '\0' || *format == 'c' || *format == 's' || *format == '%')
 				NumOfChars += print_format(*format, args);
+			else
+				NumOfChars += write(1, format, 1);
 		}
 		format++;
 	}
