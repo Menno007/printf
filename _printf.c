@@ -9,12 +9,24 @@ int _printf(const char *format, ...)
 {
 	va_list args;
 	int NumOfChars = 0;
-
+	int i = 0;
 	va_start(args, format);
 	while (*format)
 	{
 		if (!*format)
 			return (-1);
+
+			if (format[i] == '%' && format[i + 1] == '\0')
+		{
+			NumOfChars = -1;
+			return (-1);
+		}
+
+		if (format[i] == '%' && format[i + 1] == '\0')
+		{
+			NumOfChars = 1;
+			return (1);
+		}
 
 		if (*format != '%')
 			NumOfChars += write(1, format, 1);
