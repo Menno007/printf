@@ -10,6 +10,7 @@
 int main(void)
 {
 	int result;
+
 	_printf("Character:[%c]\n", 'H');
 	printf("Character:[%c]\n", 'H');
 	_printf("String:[%s]\n", "I am a string !");
@@ -24,9 +25,9 @@ int main(void)
 	printf("%d\n", result);
 	result = printf("String:[%s]\n", "I am a string !");
 	printf("%d\n", result);
-	result = _printf("Percent:[%%]\n");
+	result = _printf("Percent:[%!]\n");
 	printf("%d\n", result);
-	result = printf("Percent:[%%]\n");
+	result = printf("Percent:[%!]\n");
 	printf("%d\n", result);
 	result = printf(NULL);
 	printf("%d\n", result);

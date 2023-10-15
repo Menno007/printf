@@ -18,6 +18,7 @@ int print_str(char *str)
 	int string;
 	int i = 0;
 	string = 0;
+
 	while (str[i] != '\0')
 	{
 		string += write(1, &str[i], 1);
