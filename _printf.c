@@ -28,10 +28,8 @@ int _printf(const char *format, ...)
 		else
 		{
 			format++;
-			if (*format == '\0' || *format == 'c' || *format == 's' || *format == '%')
+			if (*format == '\0' || strchr("cs%", *format) != NULL)
 				NumOfChars += print_format(*format, args);
-			else
-				NumOfChars += write(1, format, 1);
 		}
 		format++;
 	}
