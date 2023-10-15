@@ -40,7 +40,6 @@ int print_str(char *str)
 int print_format(char specifier, va_list ap)
 {
 	int count;
-	char sympol = '%';
 
 	count = 0;
 	if (specifier == 'c')
