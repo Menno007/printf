@@ -9,7 +9,6 @@ int _printf(const char *format, ...)
 	va_list ap;
 	int result = 0;
 	int i = 0;
-	int x = '%';
 
 	if (format == NULL)
 		return (-1);
