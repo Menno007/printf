@@ -48,7 +48,6 @@ int print_format(char specifier, va_list ap)
 		count += print_str(va_arg(ap, char *));
 	else
 	{
-		count += write(1, "%", 1);
 		count += write(1, &specifier, 1);
 	}
 	return (count);
