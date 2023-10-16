@@ -1,15 +1,17 @@
 #include "main.h"
 /**
- * print_int - prints integers
+ * print_int - bla
  *
  * @integer: the integer him self
  *
+ * Return: num of chars
  */
 int print_int(int integer)
 {
 	char buffer[32];
 	int length = 0;
 	int NumOfChars = 0;
+	int i;
 
 	if (integer == INT_MIN)
 	{
@@ -18,7 +20,7 @@ int print_int(int integer)
 	}
 	if (integer < 0)
 	{
-	   NumOfChars += print_char('-');
+		NumOfChars += print_char('-');
 		integer = -integer;
 	}
 
@@ -27,10 +29,9 @@ int print_int(int integer)
 		integer /= 10;
 	} while (integer > 0);
 
-	for (int i = length - 1; i >= 0; i--)
+	for (i = (length - 1); i >= 0; i--)
 	{
-	   NumOfChars += print_char('0' + buffer[i]);
+		NumOfChars += print_char('0' + buffer[i]);
 	}
 	return (NumOfChars);
 }
-

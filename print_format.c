@@ -13,7 +13,6 @@ int print_format(char format, va_list args)
 {
 	int NumOfChars = 0;
 	char c, *s;
-	int integer;
 
 	while (format)
 	{
