@@ -74,7 +74,7 @@ int print_format(char specifier, va_list ap)
 	else if (specifier == 's')
 		count += print_str(va_arg(ap, char *));
 	else if (specifier == 'd' || specifier == 'i')
-		count += print_digit(va_arg(ap, int));
+		count += print_digit((long)(va_arg(ap, int)), 10);
 	else
 		count += write(1, &specifier, 1);
 	return (count);
