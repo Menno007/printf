@@ -27,8 +27,9 @@ int main(void)
     int len, len2;
 
 
-    _printf("%k\n");
-    _printf("%%\n");
+    _printf("%%c\n");
+    _printf("%%abcdd\n");
+    _printf("%!\n");
 
 
     return (0);
