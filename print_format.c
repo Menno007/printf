@@ -21,7 +21,7 @@ int print_str(char *str)
 	string = 0;
 	if (str == NULL)
 	{
-		string += write(1, "(null)", 6);
+		string += write(1, "(null)", 7);
 	return (string);
 	}
 	while (str[i] != '\0')

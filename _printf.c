@@ -7,18 +7,26 @@
 int _printf(const char *format, ...)
 {
 	va_list ap;
-	int result = 0, i = 0;
+	int result = 0;
+	int i = 0;
 
+	if (format == NULL)
+		return (0);
 	va_start(ap, format);
-	while (*format != '\0')
+	while (format[i] != '\0')
 	{
-		if (format == NULL || (format[i] == '%' && format[i + 1] == '\0'))
+		if (format[i] == '%' && format[i + 1] == '\0')
 			return (-1);
-		if (*format == '%')
-			result += print_format(*(++format), ap);
+		if (format[i] == '%')
+		{
+			if (format[i + 1] != '\0')
+			{
+			result += print_format(format[i + 1], ap);
+			i++;
+			}
+		}
 		else
-			result += write(1, format, 1);
-		++format;
+			result += write(1, &format[i], 1);
 		++i;
 	}
 	return (result);
