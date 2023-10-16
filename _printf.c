@@ -11,11 +11,10 @@ int _printf(const char *format, ...)
 	int i = 0;
 
 	va_start(args, format);
+	if (!*format)
+		return (-1);
 	while (*format)
 	{
-		if (!*format)
-			return (-1);
-
 		if (format[i] == '%' && format[i + 1] == '\0')
 			return (-1);
 
