@@ -28,6 +28,7 @@ int main(void)
 
 
     _printf("%k\n");
+    _printf("%%\n");
 
 
     return (0);

@@ -47,6 +47,9 @@ int print_format(char specifier, va_list ap)
 	else if (specifier == 's')
 		count += print_str(va_arg(ap, char *));
 	else
+	{
+		count += write(1, "%", 1);
 		count += write(1, &specifier, 1);
+	}
 	return (count);
 }
