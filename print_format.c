@@ -1,55 +1,43 @@
 #include "main.h"
 /**
- * print_char - ss
- * @c: ss
- * Return: ss
-*/
-int print_char(int c)
-{
-	return (write(1, &c, 1));
-}
-/**
- * print_str - ss
- * @str: ss
- * Return: ss
-*/
-int print_str(char *str)
-{
-	int string;
-	int i = 0;
+ * print_format - handels %s and %c and %%
+ *
+ * @format: the fprmat saci..
+ *
+ * @args: the args list
+ *
+ * Return: numofchars
+ */
 
-	string = 0;
-	if (str == NULL)
-	{
-		string += write(1, "(null)", 6);
-	return (string);
-	}
-	while (str[i] != '\0')
-	{
-		string += write(1, &str[i], 1);
-		i++;
-	}
-	return (string);
-}
-/**
- * print_format - ss
- * @specifier: ss
- * @ap: ss
- * Return: ss
-*/
-int print_format(char specifier, va_list ap)
+int print_format(char format, va_list args)
 {
-	int count;
+	int NumOfChars = 0;
+	char c, *s;
+	int integer;
 
-	count = 0;
-	if (specifier == 'c')
-		count += print_char(va_arg(ap, int));
-	else if (specifier == 's')
-		count += print_str(va_arg(ap, char *));
-	else
+	while (format)
 	{
-		count += write(1, "%", 1);
-		count += write(1, &specifier, 1);
+		if (format == '\0')
+			break;
+		else if (format == 'c')
+		{
+			c = va_arg(args, int);
+			NumOfChars += print_char(c);
+		}
+		else if (format == 's')
+		{
+			s = va_arg(args, char*);
+			NumOfChars += print_string(s);
+		}
+		else if (format == '%')
+		{
+			NumOfChars += print_percent();
+		}
+		else
+		{
+			format++;
+		}
+		format++;
 	}
-	return (count);
+	return (NumOfChars);
 }
