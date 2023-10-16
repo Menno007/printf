@@ -1,1 +1,1 @@
-welcome printf
+welcome print
