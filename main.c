@@ -26,7 +26,9 @@ int main(void)
 {
     int len, len2;
 
-    printf(NULL);
-  
+
+    _printf("%k\n");
+
+
     return (0);
 }
