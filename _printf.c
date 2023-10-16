@@ -10,12 +10,11 @@ int _printf(const char *format, ...)
 	int NumOfChars = 0, integer;
 	int i = 0;
 
+	if (format == NULL)
+		return (-1);
 	va_start(args, format);
 	while (*format)
 	{
-		if (format == NULL)
-			return (-1);
-
 		if (format[i] == '%' && format[i + 1] == '\0')
 			return (-1);
 
