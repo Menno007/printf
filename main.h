@@ -14,5 +14,6 @@ int print_char(char c);
 int print_string(const char *str);
 int print_percent(void);
 int print_format(char format, va_list args);
+int print_int(int integer);
 
 #endif
