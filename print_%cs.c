@@ -30,7 +30,8 @@ int print_format(char format, va_list args)
 		}
 		else if (format == '%')
 		{
-			NumOfChars += print_percent();
+			print_percent();
+			NumOfChars++;
 		}
 		else
 		{
