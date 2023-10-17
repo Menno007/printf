@@ -34,7 +34,7 @@ int print_format(char format, va_list args)
 		else if (format == 'X')
 		{
 			X = va_arg(args, unsigned int);
-			NumOfChars += print_digit(X, 16);
+			NumOfChars += print_DIGIT(X, 16);
 		}
 		else if (format == 'x')
 		{
