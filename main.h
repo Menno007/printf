@@ -15,7 +15,5 @@ int print_string(const char *str);
 int print_percent(void);
 int print_format(char format, va_list args);
 int print_int(int integer);
-int print_DIGIT(long n, int base);
-int print_digit(long n, int base);
 
 #endif

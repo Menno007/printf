@@ -12,11 +12,13 @@
 int print_format(char format, va_list args)
 {
 	int NumOfChars = 0;
-	char c, x, X, b, *s;
+	char c, *s;
 
-	while (format != '\0')
+	while (format)
 	{
-		if (format == 'c')
+		if (format == '\0')
+			break;
+		else if (format == 'c')
 		{
 			c = va_arg(args, int);
 			NumOfChars += print_char(c);
@@ -26,25 +28,14 @@ int print_format(char format, va_list args)
 			s = va_arg(args, char*);
 			NumOfChars += print_string(s);
 		}
-		else if (format == 'b')
-		{
-			b = va_arg(args, unsigned int);
-			NumOfChars += print_digit(b, 2);
-		}
-		else if (format == 'X')
-		{
-			X = va_arg(args, unsigned int);
-			NumOfChars += print_DIGIT(X, 16);
-		}
-		else if (format == 'x')
-		{
-			x = va_arg(args, unsigned int);
-			NumOfChars += print_digit(x, 16);
-		}
 		else if (format == '%')
+		{
 			NumOfChars += print_percent();
+		}
 		else
+		{
 			format++;
+		}
 		format++;
 	}
 	return (NumOfChars);
