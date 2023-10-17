@@ -12,7 +12,7 @@
 int print_format(char format, va_list args)
 {
 	int NumOfChars = 0;
-	char c, *s;
+	char c, x, X, b, *s;
 
 	while (format)
 	{
@@ -28,14 +28,25 @@ int print_format(char format, va_list args)
 			s = va_arg(args, char*);
 			NumOfChars += print_string(s);
 		}
+		else if (format == 'b')
+		{
+			b = va_arg(args, unsigned int);
+			NumOfChars += print_digit(b, 2);
+		}
+		else if (format == 'X')
+		{
+			X = va_arg(args, unsigned int);
+			NumOfChars += print_digit(X, 16);
+		}
+		else if (format == 'x')
+		{
+			x = va_arg(args, unsigned int);
+			NumOfChars += print_digit(x, 16);
+		}
 		else if (format == '%')
-		{
 			NumOfChars += print_percent();
-		}
 		else
-		{
 			format++;
-		}
 		format++;
 	}
 	return (NumOfChars);
