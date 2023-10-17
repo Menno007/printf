@@ -14,11 +14,9 @@ int print_format(char format, va_list args)
 	int NumOfChars = 0;
 	char c, x, X, b, *s;
 
-	while (format)
+	while (format != '\0')
 	{
-		if (format == '\0')
-			break;
-		else if (format == 'c')
+		if (format == 'c')
 		{
 			c = va_arg(args, int);
 			NumOfChars += print_char(c);
