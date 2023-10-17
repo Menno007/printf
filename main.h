@@ -7,7 +7,7 @@
 #include <unistd.h>
 #include <limits.h>
 
-#define BUFF_SIZE 1024
+#define BUFF_SIZE (sizeof(char) * 1024)
 
 int _printf(const char *format, ...);
 int print_char(char c);
