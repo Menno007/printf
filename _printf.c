@@ -9,6 +9,7 @@ int _printf(const char *format, ...)
 	va_list args;
 	int NumOfChars = 0, integer;
 	int i = 0;
+	char buffer[BUFF_SIZE] __attribute__((unused));
 
 	if (format == NULL)
 		return (-1);
